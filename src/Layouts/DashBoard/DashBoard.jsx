@@ -21,9 +21,8 @@ const DashBoard = () => {
             {/*  dashboard Side bar */}
             <div className="w-full md:ml-10  md:block sm:w-56 min-h-screen text-slate-100 bg-accent bg-opacity-30">
 
-                <div className="flex bg-slate-300 shadow-2xl mt-4 py-2 pl-4 ml-3 md:ml-3 rounded-md mr-3">
-                    {/* < FontAwesomeIcon size={10} icon={faPaw} className=" text-sm text-black md:ml-2 mr-2 py-2 px-2 rounded-md bg-rose-500 " /> */}
-                    <MdTask className=" text-4xl bg-accent mt-2 lg:ml-2 lg:pl-2 pr-2 text-white rounded-md  " />
+                <div className="flex bg-slate-200 shadow-2xl mt-4 py-2 pl-4 ml-3 md:ml-3 rounded-md mr-3">
+                    <MdTask className=" text-4xl bg-black mt-2 lg:ml-2 lg:pl-2 pr-2 text-white rounded-md  " />
                     <h2 className="text-black text-sm font-medium mt-1 ml-2">Tasks Management</h2>
                 </div>
 

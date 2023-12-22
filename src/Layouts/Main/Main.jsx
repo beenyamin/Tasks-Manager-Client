@@ -5,7 +5,7 @@ import Navbar from "../../Pages/Home/Navbar/Navbar";
 
 const Main = () => {
     return (
-        <div className="font-Poppins max-w-5xl rounded-2xl mx-auto dark:bg-zinc-600  bg-base-300 ">
+        <div className="font-Poppins max-w-5xl rounded mx-auto dark:bg-zinc-600  bg-base-300 ">
         <Navbar></Navbar>
     
             <Outlet></Outlet>       

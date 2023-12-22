@@ -3,8 +3,6 @@ import Swal from "sweetalert2";
 import { FaEdit } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 
-
-
 const TodoList = ({ myPost, myPosts, setMyPosts }) => {
 
   const { task, deadline, priority, description, _id } = myPost || {};
@@ -52,7 +50,7 @@ const TodoList = ({ myPost, myPosts, setMyPosts }) => {
 
 
   return (
-    <div className="card w-96 bg-slate-200 shadow-md text-neutral-content">
+    <div className="card md:w-96 bg-slate-200 shadow-md text-neutral-content">
       <div className="card-body items-center text-center">
         <div className="text-black ">
           <h2 className="card  text-center"> <span className="font-semibold ">Task:</span> {task}</h2>

@@ -1,12 +1,16 @@
-
+import { MdTask } from "react-icons/md";
 const Footer = () => {
     return (
         
         <footer >
             <div className="footer p-10 bg-base-200 text-base-content">
                 <aside>
+                <div className="flex ml-4 lg:ml-0 ">
+                    <MdTask  className=" text-3xl bg-[#14a077] mt-2 lg:ml-2 pl-2 lg:pl-2 pr-2 text-white rounded-md  " />
+                    <h2 className="lg:text-black text-sm font-semibold md:mt-3 ml-2 mt-3">Tasks Manager</h2>
+                </div>
                     {/* <img src={logo} alt="" /> */}
-                    <p> Task Manager<br />Providing reliable tech since 2010</p>
+                    <p className="ml-3"> Providing reliable tech since 2010</p>
                 </aside>
                 <nav>
                     <header className="footer-title text-[#14a077]">Services</header>

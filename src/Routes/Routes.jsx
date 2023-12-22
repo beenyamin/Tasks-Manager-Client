@@ -10,6 +10,7 @@ import TodoList from "../Pages/DashBoard/Todo/TodoList";
 import PrivateRoute from "./PrivateRoute";
 import MyAddedTask from "../Pages/DashBoard/Todo/MyAddedTask";
 import UpdatePost from "../Pages/DashBoard/UpdatePost/UpdatePost";
+import Profile from "../Pages/Profile/Profile";
 
 const routes = createBrowserRouter([
     {
@@ -25,8 +26,8 @@ const routes = createBrowserRouter([
           element:<PrivateRoute><Task></Task></PrivateRoute>
         },
         {
-          path: "/contact",
-          element:''
+          path: "/profile",
+          element:<Profile></Profile>
         },
 
     ]

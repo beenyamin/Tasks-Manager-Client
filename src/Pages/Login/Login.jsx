@@ -4,7 +4,6 @@ import { FaGithub } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { ImSpinner } from "react-icons/im";
 import { MdMarkEmailRead } from "react-icons/md";
-import { IoIosCloseCircle } from "react-icons/io";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
@@ -37,7 +36,7 @@ const Login = () => {
                     .then(res => {
                         console.log(res.data)
                         if (res.data.success) {
-                            navigate(location?.state ? location?.state : '/')
+                            navigate(location?.state ? location?.state : '/dashboard')
                             toast.success('Successfully Login!')
                         }
                     })
@@ -61,7 +60,7 @@ const Login = () => {
                     .then(res => {
                         console.log(res.data)
                         if (res.data.success) {
-                            navigate(location?.state ? location?.state : '/')
+                            navigate(location?.state ? location?.state : '/dashboard')
                             toast.success('Successfully Login!')
                         }
                     })

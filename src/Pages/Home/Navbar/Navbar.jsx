@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import toast from "react-hot-toast";
-
+import { MdTask } from "react-icons/md";
 
 const Navbar = () => {
 
@@ -26,6 +26,10 @@ const Navbar = () => {
             isPending ? "pending " : isActive ? " text-[#14a077]" : "lg:text-white font-normal"}>Dashboard
         </NavLink> </li> :"" }
 
+        <li><NavLink to="/profile" className={({ isActive, isPending }) =>
+            isPending ? "pending " : isActive ? " text-[#14a077]" : "lg:text-white font-normal"}>Profile
+        </NavLink> </li>
+        
         <li><NavLink to="/task" className={({ isActive, isPending }) =>
             isPending ? "pending " : isActive ? " text-[#14a077]" : "lg:text-white font-normal"}>Tasks
         </NavLink> </li>
@@ -46,7 +50,11 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to="/">
-                    {/* <img src={logo} alt="" /> */}
+                <div className="flex lg:shadow-2xl ml-4 lg:ml-0 ">
+                    <MdTask  className=" text-3xl bg-[#14a077] mt-2 lg:ml-2 pl-2 lg:pl-2 pr-2 text-white rounded-md  " />
+                    <h2 className="lg:text-white text-sm font-semibold md:mt-3 ml-2">Tasks Manager</h2>
+                </div>
+                 
                 </Link>
 
             </div>

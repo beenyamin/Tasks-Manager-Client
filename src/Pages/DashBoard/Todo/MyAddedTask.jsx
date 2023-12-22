@@ -7,9 +7,7 @@ import TodoList from "./TodoList";
 const MyAddedTask = () => {
 
     const {user} = useAuth();
-    console.log(user.email);
     const [myPosts, setMyPosts] = useState([]);
-    console.log(myPosts);
 
     useEffect(() => {
         fetch(`http://localhost:5000/myPostedTask?email=${user?.email}`
@@ -20,15 +18,12 @@ const MyAddedTask = () => {
     }, [user?.email])
 
 
-
-    console.log(myPosts)
-
     return (
         <div>
             <Helmet>
                 <title>JobTex | My Added Task</title>
             </Helmet>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 my-5">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 my-5">
                 {
                     myPosts?.map(myPost => <TodoList
                         setMyPosts={setMyPosts}
