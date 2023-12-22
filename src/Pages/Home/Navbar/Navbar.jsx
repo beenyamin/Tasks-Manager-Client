@@ -1,31 +1,41 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { AiOutlineUserAdd } from "react-icons/ai";
+import toast from "react-hot-toast";
 
 
 const Navbar = () => {
 
     const { user, logOut } = useAuth()
+    const handelLogout = () => {
+        logOut()
+            .then(() => {
+                toast.success('Successfully Logout')
+            }).catch((error) => {
+                toast.error(error)
+            });
+    }
 
     const navLink = <>
 
         <li><NavLink to="/" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? " text-[#14a077]" : ""}>Home
+            isPending ? "pending " : isActive ? " text-[#14a077]" : "lg:text-white font-normal"}>Home
         </NavLink> </li>
 
-        <li><NavLink to="/dashboard" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? " text-[#14a077]" : ""}>Dashboard
+       { user?.email ?  <li><NavLink to="/dashboard" className={({ isActive, isPending }) =>
+            isPending ? "pending " : isActive ? " text-[#14a077]" : "lg:text-white font-normal"}>Dashboard
+        </NavLink> </li> :"" }
+
+        <li><NavLink to="/task" className={({ isActive, isPending }) =>
+            isPending ? "pending " : isActive ? " text-[#14a077]" : "lg:text-white font-normal"}>Tasks
         </NavLink> </li>
-
-        <li><NavLink to="/tasks" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? " text-[#14a077]" : ""}>Tasks
-        </NavLink> </li>
-
-       
-
     </>
+
+
+
+    
     return (
-        <div className="navbar bg-base-200 py-5 lg:px-10">
+        <div className="navbar max-w-screen-lg  lg:px-10 fixed lg:bg-opacity-10 bg-opacity-90 z-10 bg-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost md:hidden">
@@ -40,11 +50,13 @@ const Navbar = () => {
                 </Link>
 
             </div>
+
             <div className="navbar-center md:block hidden ">
                 <ul className="flex gap-5 text-lg font-semibold ">
                     {navLink}
                 </ul>
             </div>
+
             <div className="navbar-end">
 
                 {
@@ -56,10 +68,10 @@ const Navbar = () => {
                                     <img src={user.photoURL} />
                                 </div>
                             </label>
-                            <ul tabIndex={0} className="menu  dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <ul tabIndex={0} className="menu  dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-64">
                                 <li><a>{user.displayName}</a></li>
                                 <li><a>{user.email}</a></li>
-                                {/* <li><a onClick={handelLogout}>Logout</a></li> */}
+                                <li><a onClick={handelLogout}>Logout</a></li>
                             </ul>
                         </div>
 

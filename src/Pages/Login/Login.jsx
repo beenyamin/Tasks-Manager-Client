@@ -33,7 +33,7 @@ const Login = () => {
                 console.log(res.user)
                 const user = { email };
 
-                axios.post('https://assignment-11-server-nu-bay.vercel.app/user', user, { withCredentials: true })
+                axios.post('http://localhost:5000/user', user, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                         if (res.data.success) {
@@ -57,7 +57,7 @@ const Login = () => {
             .then(res => {
                 const loggedInUser = res.user.email
                 const user = { email: loggedInUser };
-                axios.post('https://assignment-11-server-nu-bay.vercel.app/user', user, { withCredentials: true })
+                axios.post('http://localhost:5000/user', user, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                         if (res.data.success) {

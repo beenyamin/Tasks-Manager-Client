@@ -4,14 +4,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaUserCheck ,FaGithub} from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { IoIosCloseCircle } from "react-icons/io";
 import { MdMarkEmailRead } from "react-icons/md";
 import { ImSpinner } from "react-icons/im";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 
 const SignUp = () => {
-    const { googleSingUp, createUser, userUpdateProfile,loading } = useAuth();
+    const { googleSingUp, createUser, userUpdateProfile,loading,logOut } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -21,7 +20,7 @@ const SignUp = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const img = form.photo.value;
+        const image = form.image.value;
 
         if (password.length < 6) {
             toast.error('Please most be at 6 characters');
@@ -35,12 +34,15 @@ const SignUp = () => {
 
             .then(res => {
                 console.log(res.user)
-                userUpdateProfile(name, img)
+                userUpdateProfile(name, image )
                     .then(res => {
                         console.log(res)
                         navigate(location.state ? location.state : '/login')
                         toast.success('Successfully Registration!');
 
+                        logOut()
+                        .then (res => res)
+                        .then (error => console.log(error))
                     })
             })
 

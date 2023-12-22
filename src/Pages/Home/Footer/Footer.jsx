@@ -31,7 +31,7 @@ const Footer = () => {
                     </div>
                 </nav>
             </div>
-            <div className="footer footer-center p-4 bg-base-300 text-base-content">
+            <div className="footer footer-center p-4  bg-[#eae4e6]  text-base-content">
                 <aside>
                     <p>Copyright © 2023 - Task Manager All right reserved </p>
                 </aside>

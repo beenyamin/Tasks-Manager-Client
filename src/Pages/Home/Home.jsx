@@ -1,8 +1,13 @@
 
+import Audience from "./Audience/Audience";
+import Banner from "./Banner/Banner";
+
 
 const Home = () => {
     return (
-        <div className="h-screen">
+        <div className="">
+            <Banner></Banner>
+           <Audience></Audience>
             
         </div>
     );
