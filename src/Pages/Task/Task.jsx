@@ -8,7 +8,7 @@ const Task = () => {
 
 
       useEffect(() => {
-        fetch(`http://localhost:5000/myPostedTask?email=${user?.email}`
+        fetch(`https://task-manager-server-beta-ten.vercel.app/myPostedTask?email=${user?.email}`
         , 
         { credentials: 'include' })
             .then(res => res.json())

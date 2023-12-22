@@ -20,7 +20,7 @@ const TodoList = ({ myPost, myPosts, setMyPosts }) => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:5000/Task/${id}`, {
+        fetch(`https://task-manager-server-beta-ten.vercel.app/Task/${id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

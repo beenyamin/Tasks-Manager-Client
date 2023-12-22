@@ -18,7 +18,7 @@ const AddTask = () => {
         const addNewTask = { task, description, deadline, priority, email: user?.email }
         console.log(addNewTask)
 
-        fetch('http://localhost:5000/newTask', {
+        fetch('https://task-manager-server-beta-ten.vercel.app/newTask', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

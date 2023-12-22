@@ -21,7 +21,7 @@ const UpdatePost = () => {
         const UpdateTask = { task, description, deadline, priority, email: user?.email }
         console.log(UpdateTask)
 
-        fetch(`http://localhost:5000/updateTask/${_id}`, {
+        fetch(`https://task-manager-server-beta-ten.vercel.app/updateTask/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

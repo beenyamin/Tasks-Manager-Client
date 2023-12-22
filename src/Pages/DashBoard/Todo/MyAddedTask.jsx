@@ -10,7 +10,7 @@ const MyAddedTask = () => {
     const [myPosts, setMyPosts] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myPostedTask?email=${user?.email}`
+        fetch(`https://task-manager-server-beta-ten.vercel.app/myPostedTask?email=${user?.email}`
         , 
         { credentials: 'include' })
             .then(res => res.json())
@@ -25,7 +25,7 @@ const MyAddedTask = () => {
             </Helmet>
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 my-5">
                 {
-                    myPosts?.map(myPost => <TodoList
+                    myPosts.map(myPost => <TodoList
                         setMyPosts={setMyPosts}
                         myPosts={myPosts}
                         myPost={myPost}

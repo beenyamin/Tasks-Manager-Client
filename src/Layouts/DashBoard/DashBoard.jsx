@@ -12,7 +12,7 @@ import useAuth from "../../Hooks/useAuth";
 
 
 const DashBoard = () => {
-    const {logOut} = useAuth ()
+    const {user,logOut} = useAuth ()
     return (
         <div className="flex flex-col  sm:flex-row">
             <Helmet>
@@ -22,8 +22,12 @@ const DashBoard = () => {
             <div className="w-full md:ml-10  md:block sm:w-56 min-h-screen text-slate-100 bg-accent bg-opacity-30">
 
                 <div className="flex bg-slate-200 shadow-2xl mt-4 py-2 pl-4 ml-3 md:ml-3 rounded-md mr-3">
-                    <MdTask className=" text-4xl bg-black mt-2 lg:ml-2 lg:pl-2 pr-2 text-white rounded-md  " />
-                    <h2 className="text-black text-sm font-medium mt-1 ml-2">Tasks Management</h2>
+                <label tabIndex={0} className="btn border-[#14a077]  btn-ghost btn-circle avatar ">
+                                <div className="w-10 rounded-full">
+                                    <img src={user.photoURL} />
+                                </div>
+                            </label>
+                    <h2 className="text-black text-sm font-medium lg:mt-1 mt-4 ml-2">Tasks Management</h2>
                 </div>
 
                 <ul className="menu lg:p-3 text-black gap-2 font-semibold">

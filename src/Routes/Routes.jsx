@@ -27,7 +27,7 @@ const routes = createBrowserRouter([
         },
         {
           path: "/profile",
-          element:<Profile></Profile>
+          element:<PrivateRoute><Profile></Profile></PrivateRoute>
         },
 
     ]
@@ -38,21 +38,21 @@ const routes = createBrowserRouter([
 
     {
       path:'dashboard',
-      element:<DashBoard></DashBoard>,
+      element:<PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
       children:[
        {
          path:'newTask',
-         element:<AddTask></AddTask>,
+         element:<PrivateRoute><AddTask></AddTask></PrivateRoute>,
         
        },
        {
          path:'myPostedTas',
-         element:<TodoList></TodoList>
+         element:<PrivateRoute><TodoList></TodoList></PrivateRoute>
        },
        {
         path: 'updateTask/:id',
         element: <PrivateRoute><UpdatePost></UpdatePost></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/updateTask/${params.id}`)
+        loader: ({ params }) => fetch(`https://task-manager-server-beta-ten.vercel.app/updateTask/${params.id}`)
       },
        {
          path:'myPostedTask',
