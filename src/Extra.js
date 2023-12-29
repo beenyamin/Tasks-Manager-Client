@@ -1,47 +1,59 @@
 <div>
-<div className="px-5 pt-5 rounded-lg  bg-[#c6e5eb] ">
 
-<div className="space-y-2">
-  <h2 className="card-title text-emerald-600 text-2xl">{task}</h2>
-  <p><span className="font-bold">Priority:</span> {priority}</p>
-  <p><span className="font-bold">DeadLine:</span> {deadline}</p>
-  <p><span className="font-bold">Description:</span> {description}</p>
+{/* try {
+    // Step 1: Upload the image
+    const imageData = await ImageUpload(image);
 
-</div>
-<div className="card-actions justify-between">
-  <Link to={`/dashboard/updateTask/${_id}`}>
-  <button className="btn btn-primary"></button>
-  </Link>
-  <button onClick={() => handelDelete(_id)} className="btn bg-[#a01420]  my-5 text-white hover:bg-[#4f161b]">Delete</button>
-</div>
-</div>
+    // Step 2: Create user
+    const userCreateResponse = await createUser(email, password);
+    console.log(userCreateResponse.user);
 
+    // Step 3: Update user profile
+    const userUpdateResponse = await updateUserProfile(name, imageData?.data?.display_url);
+    console.log(userUpdateResponse);
 
+    // Step 4: Navigate to the login page
+    navigate(location.state ? location.state : '/login');
+    toast.success('Successfully Registration!');
 
+    // Step 5: Log out (optional, depending on your use case)
+    const logoutResponse = await logOut();
+    console.log(logoutResponse);
 
+} catch (error) {
+    // Handle errors at any step
+    toast.error(error.message);
+    console.error(error);
+} */}
 
 
 
 
 {/* ====>   */}
 
-<div className="card w-96 bg-neutral text-neutral-content">
-  <div className="card-body items-center text-center">
-    <h2 className="card-title">{task}!</h2>
-    <p><span className="font-normal">Priority:</span>{priority}</p>
-    <p><span className="font-semibold">DeadLine:</span> {deadline}</p>
-  <p><span className="font-semibold">Description:</span> {description}</p>
+{/* createUser(email, password)
+            .then(res => {
+                console.log(res.user)
+                userUpdateProfile(name, image )
+                    .then(res => {
+                        console.log(res)
+                        navigate(location.state ? location.state : '/login')
+                        toast.success('Successfully Registration!');
 
-    <div className="card-actions justify-end">
+                        logOut()
+                        .then (res => res)
+                        .then (error => console.log(error))
+                    })
+            })
 
-    <Link to={`/dashboard/updateTask/${_id}`}>
-  <button className="btn btn-primary"><FaEdit></FaEdit></button>
-  </Link>
-      <button onClick={() => handelDelete(_id)} className="btn btn-ghost"><FaTrashAlt ></FaTrashAlt></button>
+            .catch(error => {
+                toast.error(error.message);
 
-    </div>
-  </div>
-</div>
+
+            }) */}
+
+{/* http://localhost:5000 */}
+{/* https://task-manager-server-beta-ten.vercel.app */}
 
 
 </div>

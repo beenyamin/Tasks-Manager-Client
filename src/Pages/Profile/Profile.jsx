@@ -12,7 +12,7 @@ const Profile = () => {
         <div>
             <div className='flex justify-center items-center pt-20'>
                 <Helmet>
-                    <title>Profile</title>
+                    <title>Task Manager | Profile</title>
                 </Helmet>
 
                 <form onSubmit={handleProfileUpdate}>
@@ -60,10 +60,10 @@ const Profile = () => {
                                     </div>
 
                                     <div className="mt-5 ">
-                                        <button type="submit" className='bg-[#F43F5E] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
+                                        <button type="submit" className='bg-[#14a077] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#4aceec] block mb-1'>
                                             Update Profile
                                         </button>
-                                        <button className='bg-[#F43F5E] px-7 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053]'>
+                                        <button className='bg-[#14a077] px-7 py-1 rounded-lg text-white cursor-pointer hover:bg-[#4aceec]'>
                                             Change Password
                                         </button>
                                     </div>

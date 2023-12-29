@@ -8,19 +8,20 @@ import { MdMarkEmailRead } from "react-icons/md";
 import { ImSpinner } from "react-icons/im";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
+import { ImageUpload } from "../../Hooks/useImageUpload";
 
 const SignUp = () => {
     const { googleSingUp, createUser, userUpdateProfile,loading,logOut } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 
-    const handelSignUp = e => {
+    const handelSignUp = async (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const image = form.image.value;
+        const image = form.image.files[0];
 
         if (password.length < 6) {
             toast.error('Please most be at 6 characters');
@@ -30,29 +31,31 @@ const SignUp = () => {
             return;
         }
 
-        createUser(email, password)
-
-            .then(res => {
-                console.log(res.user)
-                userUpdateProfile(name, image )
-                    .then(res => {
-                        console.log(res)
-                        navigate(location.state ? location.state : '/login')
-                        toast.success('Successfully Registration!');
-
-                        logOut()
-                        .then (res => res)
-                        .then (error => console.log(error))
-                    })
-            })
-
-            .catch(error => {
-
-                toast.error(error.message);
-
-
-            })
-
+        try {
+            // Step 1: Upload the image
+            const imageData = await ImageUpload(image);
+        console.log(imageData);
+            // Step 2: Create user
+            const userCreateResponse = await createUser(email, password);
+            console.log(userCreateResponse.user);
+        
+            // Step 3: Update user profile
+            const userUpdateResponse = await userUpdateProfile(name, imageData?.data?.display_url);
+            console.log(userUpdateResponse);
+        
+            // Step 4: Navigate to the login page
+            navigate(location.state ? location.state : '/login');
+            toast.success('Successfully Registration!');
+        
+            // Step 5: Log out (optional, depending on your use case)
+            const logoutResponse = await logOut();
+            console.log(logoutResponse);
+        
+        } catch (error) {
+            // Handle errors at any step
+            toast.error(error.message);
+            console.error(error);
+        }
 
     }
 

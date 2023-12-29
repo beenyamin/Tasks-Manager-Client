@@ -21,7 +21,7 @@ const MyAddedTask = () => {
     return (
         <div>
             <Helmet>
-                <title>JobTex | My Added Task</title>
+                <title>Task Manager | My Added Task</title>
             </Helmet>
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 my-5">
                 {
